@@ -1,4 +1,4 @@
-function moveDodgerLeft() {
+const moveDodgerLeft = () => {
     const leftNumbers = dodger.style.left.replace("px", "");
     const left = parseInt(leftNumbers, 10);
 
@@ -7,27 +7,23 @@ function moveDodgerLeft() {
     }
 }
 
-function moveDodgerRight() {
+const moveDodgerRight = () => {
     const rightNumbers = dodger.style.left.replace("px", "");
     const right = parseInt(rightNumbers, 10);
 
-    if (right < 400) {
+    if (right < 360) {
         dodger.style.left = `${right + 1}px`;
     }
 }
 
 document.addEventListener("keydown", function (e) {
-    console.log(e);
     if (e.key === "ArrowLeft") {
         moveDodgerLeft();
-    }
-    if (e.key === "a") {
+    } else if (e.key === "a") {
         moveDodgerLeft();
-    }
-    if (e.key === "ArrowRight") {
+    } else if (e.key === "ArrowRight") {
         moveDodgerRight();
-    }
-    if (e.key === "d") {
+    } else if (e.key === "d") {
         moveDodgerRight();
-    }
+    };
 });
